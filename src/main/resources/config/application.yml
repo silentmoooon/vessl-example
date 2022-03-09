@@ -1,0 +1,10 @@
+aa:
+  bb: name
+  cc: age
+web:
+  port: 8081
+
+sql:
+  jdbcUrl: jdbc:mysql://192.168.50.98:3306/test
+  username: xiecan
+  password: xcyswnhm
