@@ -1,16 +1,11 @@
 package org.vessl.test;
 
-import org.vessl.bean.Startup;
-
-import java.lang.reflect.InvocationTargetException;
-import java.sql.SQLException;
+import org.vessl.bean.VesslStartup;
 
 public class Main {
     public static void main(String[] args) {
-        Startup startup = new Startup();
-        startup.startup();
-
-
+        VesslStartup vesslStartup = new VesslStartup();
+        vesslStartup.startup();
     }
 
 }

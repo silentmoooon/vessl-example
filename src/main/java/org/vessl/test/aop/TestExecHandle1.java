@@ -1,12 +1,11 @@
 package org.vessl.test.aop;
 
 import net.sf.cglib.core.Signature;
-import org.vessl.bean.ClassExecuteHandler;
-import org.vessl.bean.MethodExecutor;
-import org.vessl.bean.Order;
+import org.vessl.bean.*;
 
 import java.lang.annotation.Annotation;
 
+@Handle
 @Order(1)
 public class TestExecHandle1 implements ClassExecuteHandler {
     @Override
