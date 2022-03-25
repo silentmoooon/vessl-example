@@ -1,11 +1,11 @@
 package org.vessl.test.service;
 
-import org.vessl.bean.Bean;
-import org.vessl.bean.Inject;
-import org.vessl.bean.config.Value;
-import org.vessl.test.dao.TestAbsMapper;
-import org.vessl.test.bean.TestBean;
+import org.vessl.base.bean.Bean;
+import org.vessl.base.bean.Inject;
+import org.vessl.base.bean.config.Value;
 import org.vessl.test.aop.TestLog;
+import org.vessl.test.bean.TestBean;
+import org.vessl.test.dao.TestAbsMapper;
 import org.vessl.test.dao.TestMapper;
 
 import java.util.List;

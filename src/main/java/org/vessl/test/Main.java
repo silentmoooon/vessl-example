@@ -1,6 +1,7 @@
 package org.vessl.test;
 
-import org.vessl.bean.VesslStartup;
+
+import org.vessl.base.VesslStartup;
 
 public class Main {
     public static void main(String[] args) {

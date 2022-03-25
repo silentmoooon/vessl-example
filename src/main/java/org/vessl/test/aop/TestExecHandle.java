@@ -1,14 +1,14 @@
 package org.vessl.test.aop;
 
 import net.sf.cglib.core.Signature;
-import org.vessl.bean.ClassExecuteHandler;
-import org.vessl.bean.Handle;
-import org.vessl.bean.MethodExecutor;
+import org.vessl.base.aop.Aop;
+import org.vessl.base.aop.ExecuteInterceptor;
+import org.vessl.base.aop.MethodExecutor;
 
 import java.lang.annotation.Annotation;
 
-@Handle
-public class TestExecHandle implements ClassExecuteHandler {
+@Aop
+public class TestExecHandle implements ExecuteInterceptor {
     @Override
     public Class<? extends Annotation>[] targetAnnotation() {
         return new Class[]{TestLog.class};
