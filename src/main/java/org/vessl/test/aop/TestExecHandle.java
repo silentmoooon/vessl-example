@@ -1,9 +1,9 @@
 package org.vessl.test.aop;
 
-import net.sf.cglib.core.Signature;
-import org.vessl.base.aop.Aop;
-import org.vessl.base.aop.ExecuteInterceptor;
-import org.vessl.base.aop.MethodExecutor;
+import org.vessl.core.aop.Aop;
+import org.vessl.core.aop.ExecuteInterceptor;
+import org.vessl.core.aop.ProxyData;
+import org.vessl.core.aop.ProxyExecutor;
 
 import java.lang.annotation.Annotation;
 
@@ -15,28 +15,28 @@ public class TestExecHandle implements ExecuteInterceptor {
     }
 
     @Override
-    public void beforeHandle(Signature signature, Object[] args) {
-        System.out.println("before "+signature.getName());
+    public void beforeHandle(ProxyData proxyData) {
+        System.out.println("before "+proxyData.getSignature().getName());
     }
 
     @Override
-    public void afterHandle(Signature signature) {
-        System.out.println("after "+signature.getName());
+    public void afterHandle(ProxyData proxyData) {
+        System.out.println("after "+proxyData.getSignature().getName());
     }
 
     @Override
-    public Object handle(MethodExecutor methodExecutor) throws Throwable {
-        System.out.println("handleing "+methodExecutor.getSignature().getName());
-        return methodExecutor.invoke();
+    public Object handle(ProxyExecutor proxyExecutor) throws Throwable {
+        System.out.println("handleing "+ proxyExecutor.getSignature().getName());
+        return proxyExecutor.invoke();
     }
 
     @Override
-    public void afterReturn(Signature signature, Object[] args, Object result) {
+    public void afterReturn(ProxyData proxyData, Object result) {
 
     }
 
     @Override
-    public void afterException(Signature signature, Object[] args, Throwable e) {
+    public void afterException(ProxyData proxyData, Throwable e) {
 
     }
 }

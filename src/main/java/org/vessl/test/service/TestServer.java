@@ -1,11 +1,10 @@
 package org.vessl.test.service;
 
-import org.vessl.base.bean.Bean;
-import org.vessl.base.bean.Inject;
-import org.vessl.base.bean.config.Value;
+import org.vessl.core.bean.Bean;
+import org.vessl.core.bean.Inject;
+import org.vessl.core.bean.config.Value;
 import org.vessl.test.aop.TestLog;
 import org.vessl.test.bean.TestBean;
-import org.vessl.test.dao.TestAbsMapper;
 import org.vessl.test.dao.TestMapper;
 
 import java.util.List;
@@ -18,10 +17,10 @@ public class TestServer {
     private TestMapper testMapper;
 
     @Inject
-    private List<TestAbsMapper> testAbsMappers;
+    private List<IService> services;
 
     @Inject
-    private Map<String, TestAbsMapper> testAbsMapperMap;
+    private Map<String, IService> serviceMap;
 
     @Value("${aa.dd:11}")
     private String test;
@@ -35,13 +34,13 @@ public class TestServer {
         System.out.println("test");
         System.out.println(test);
         System.out.println("\nmap");
-        testAbsMapperMap.forEach((s, testAbsMapper) -> {
+        serviceMap.forEach((s, testAbsMapper) -> {
             System.out.println(s);
-            System.out.println(testAbsMapper.select());
+            System.out.println(testAbsMapper.name());
         });
         System.out.println("\nlist");
-        testAbsMappers.forEach((testAbsMapper) -> {
-            System.out.println(testAbsMapper.select());
+        services.forEach((testAbsMapper) -> {
+            System.out.println(testAbsMapper.name());
         });
         return testBeans;
     }
